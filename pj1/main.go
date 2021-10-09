@@ -29,4 +29,5 @@ func main() {
 	fmt.Println(gp[0])
 	fmt.Println(gp[1])
 	fmt.Println(gp[1].People[0])
+	fmt.Println(gp[1].People[0].LastName)
 }
