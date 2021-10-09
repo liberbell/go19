@@ -17,4 +17,9 @@ func main() {
 
 	people1 := []Person{person1, person2}
 	people2 := []Person{person3, person4}
+
+	gp := []Group{
+		{Name: "According", People: people1},
+		{Name: "Sales", People: people2},
+	}
 }
