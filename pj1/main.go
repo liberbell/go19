@@ -10,5 +10,6 @@ type Group struct {
 }
 
 func main() {
-	a
+	person1 := Person{"George", "Simth"}
+	person2 := Person{"Elizabeth", "Plath"}
 }
