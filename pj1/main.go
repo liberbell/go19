@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type Person struct {
 	FirstName string
 	LastName  string
@@ -22,4 +24,7 @@ func main() {
 		{Name: "According", People: people1},
 		{Name: "Sales", People: people2},
 	}
+
+	fmt.Println(gp)
+	fmt.Println(gp[0])
 }
