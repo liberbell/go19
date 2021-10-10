@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/gob"
+	"fmt"
 	"io/ioutil"
 )
 
@@ -29,4 +30,9 @@ func main() {
 
 	person := Person{"Bob", "Baker"}
 	writeBinaryFile(person, file)
+
+	var readPerson Person
+	readBinaryFile(&readPerson, file)
+
+	fmt.Println(readPerson)
 }
