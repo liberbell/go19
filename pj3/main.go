@@ -21,6 +21,8 @@ func writeBinaryFile(data interface{}, file string) {
 func readBinaryFile(data interface{}, file string) {
 	raw, _ := ioutil.ReadFile(file)
 	buf := bytes.NewBuffer(raw)
+	decoder := gob.NewDecoder(buf)
+	decoder.Decode(data)
 }
 func main() {
 	a
