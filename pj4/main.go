@@ -12,4 +12,6 @@ func main() {
 	defer db.Close()
 
 	db.Query("CREATE TABLE PERSON (first_name varchar(50), last_name varchar(50)")
+
+	db.Query("INSERT INTO PERSON (first_name, last_name) values ('Bob', 'Baker'), ('Betty', 'White') ")
 }
