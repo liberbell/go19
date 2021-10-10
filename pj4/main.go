@@ -1,6 +1,9 @@
 package main
 
-import "database/sql"
+import (
+	"database/sql"
+	"fmt"
+)
 
 type Person struct {
 	FirstName string
@@ -19,5 +22,7 @@ func main() {
 	for dataset.Next() {
 		var person Person
 		dataset.Scan(&person.FirstName, &person.LastName)
+
+		fmt.Println(person)
 	}
 }
