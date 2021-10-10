@@ -25,5 +25,8 @@ func readBinaryFile(data interface{}, file string) {
 	decoder.Decode(data)
 }
 func main() {
-	a
+	file := "person.txt"
+
+	person := Person{"Bob", "Baker"}
+	writeBinaryFile(person, file)
 }
