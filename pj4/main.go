@@ -15,4 +15,9 @@ func main() {
 
 	db.Query("INSERT INTO PERSON (first_name, last_name) values ('Bob', 'Baker'), ('Betty', 'White') ")
 	dataset, _ := db.Query("SELECT * FROM PERSON")
+
+	for dataset.Next() {
+		var person Person
+		dataset.Scan(&person.FirstName, &person.LastName)
+	}
 }
