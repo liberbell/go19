@@ -1,5 +1,9 @@
 package main
 
+import "net/http"
+
 func main() {
-	a
+	http.HandleFunc("/", func(rw http.ResponseWriter, r *http.Request) {
+		rw.WriteHeader(http.StatusBadRequest)
+	})
 }
