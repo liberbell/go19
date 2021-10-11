@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 )
 
@@ -19,5 +20,9 @@ func main() {
 			rw.WriteHeader(http.StatusMethodNotAllowed)
 			return
 		}
+
+		body, _ := ioutil.ReadAll(r.Body)
+		fmt.Fprintln(rw, string(body))
 	})
+	http.ListenAndServe(":9001", nil)
 }
