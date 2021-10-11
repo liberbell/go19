@@ -7,5 +7,7 @@ type Person struct {
 }
 
 func main() {
-	a
+	joe := Person{FirstName: "Joe", LastName: "Smith"}
+	joe.Hobbies = []string{"Skiing", "Wind Surfing"}
+
 }
