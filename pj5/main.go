@@ -9,4 +9,7 @@ type Person struct {
 
 func main() {
 	db, _ := sqlx.Open("mysql", "root:dbpassword!#edc@tcp(127.0.0.1:3306)/sys")
+	defer db.Close()
+
+	db.Query("CREATE TABLE PERSON (first_name varchar(50), last_name varchar(50))")
 }
