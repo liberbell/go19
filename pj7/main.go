@@ -1,5 +1,7 @@
 package main
 
+import "encoding/xml"
+
 type Person struct {
 	FirstName string   `xml:"fname"`
 	LastName  string   `xml:"lname"`
@@ -9,4 +11,6 @@ type Person struct {
 func main() {
 	joe := Person{FirstName: "Joe", LastName: "Smith"}
 	joe.Hobbies = []string{"skies", "Wind Surfing"}
+
+	xmlOutput, _ := xml.MarshalIndent(&joe, " ", "  ")
 }
