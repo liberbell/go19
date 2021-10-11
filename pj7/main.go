@@ -18,4 +18,9 @@ func main() {
 	xmlOutput, _ := xml.MarshalIndent(&joe, " ", "  ")
 	fmt.Println(xmlOutput)
 	fmt.Println(string(xmlOutput))
+
+	joeFromxml := Person{}
+
+	xml.Unmarshal(xmlOutput, &joeFromxml)
+	fmt.Println(joeFromxml)
 }
