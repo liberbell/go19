@@ -1,6 +1,9 @@
 package main
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 type Person struct {
 	FirstName string `json:"fname"`
@@ -13,5 +16,9 @@ func main() {
 	joe.Hobbies = []string{"Skiing", "Wind Surfing"}
 
 	jsonOutput, _ := json.MarshalIndent(&joe, " ", "   ")
+
+	fmt.Println(string(jsonOutput))
+
+	joeFromJson := Person{}
 
 }
