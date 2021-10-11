@@ -13,6 +13,7 @@ type Person struct {
 
 func main() {
 	joe := Person{FirstName: "Joe", LastName: "Smith"}
+	// joe.Hobbies = []string{"Skiing", "Wind Surfing"}
 	joe.Hobbies = []string{"Skiing", "Wind Surfing"}
 
 	jsonOutput, _ := json.MarshalIndent(&joe, " ", "   ")
