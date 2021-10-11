@@ -1,6 +1,9 @@
 package main
 
-import "net/http"
+import (
+	"encoding/json"
+	"net/http"
+)
 
 type Person struct {
 	ID        int    `json:"id"`
@@ -14,6 +17,7 @@ func main() {
 
 		switch r.Method {
 		case http.MethodGet:
+			jsonRequest, _ := json.MarshalIndent(&People, " ", "   ")
 		}
 	})
 }
