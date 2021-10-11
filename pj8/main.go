@@ -20,5 +20,7 @@ func main() {
 	fmt.Println(string(jsonOutput))
 
 	joeFromJson := Person{}
+	json.Unmarshal(jsonOutput, &joeFromJson)
+	fmt.Println(joeFromJson)
 
 }
