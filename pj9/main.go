@@ -1,5 +1,7 @@
 package main
 
+import "net/http"
+
 type Person struct {
 	ID        int    `json:"id"`
 	FirstName string `json:"fname"`
@@ -7,5 +9,11 @@ type Person struct {
 }
 
 func main() {
-	a
+	var People []Person
+	http.HandleFunc("/person/", func(rw http.ResponseWriter, r *http.Request) {
+
+		switch r.Method {
+		case http.MethodGet:
+		}
+	})
 }
