@@ -56,6 +56,8 @@ func main() {
 
 			for i := range people {
 				copy(people[i:], people[i+1:])
+				people = people[:len(people)-1]
+				return
 
 			}
 		}
