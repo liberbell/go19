@@ -34,6 +34,9 @@ func main() {
 				}
 			}
 			people = append(people, newPerson)
+
+		case http.MethodPut:
+			requestBodyBytes, _ := ioutil.ReadAll(r.Body)
 		}
 	})
 }
