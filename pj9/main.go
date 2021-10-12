@@ -55,12 +55,14 @@ func main() {
 			json.Unmarshal(requestBodyBytes, &newPerson)
 
 			for i := range people {
-				copy(people[i:], people[i+1:])
-				people = people[:len(people)-1]
-				return
-
+				if people[i].ID == newPerson.ID {
+					copy(people[i:], people[i+1:])
+					people = people[:len(people)-1]
+					return
+				}
 			}
+			rw.WriteHeader(http.StatusNotFound)
 		}
-		rw.WriteHeader(http.StatusNotFound)
+
 	})
 }
