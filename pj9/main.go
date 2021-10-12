@@ -61,5 +61,6 @@ func main() {
 
 			}
 		}
+		rw.WriteHeader(http.StatusNotFound)
 	})
 }
