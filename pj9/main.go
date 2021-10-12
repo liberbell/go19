@@ -33,6 +33,7 @@ func main() {
 					return
 				}
 			}
+			people = append(people, newPerson)
 		}
 	})
 }
