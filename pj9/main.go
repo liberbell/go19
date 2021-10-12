@@ -39,6 +39,14 @@ func main() {
 			requestBodyBytes, _ := ioutil.ReadAll(r.Body)
 			var newPerson Person
 			json.Unmarshal(requestBodyBytes, &newPerson)
+
+			for i := range people {
+				if people[i].ID == newPerson.ID {
+					people[i].FirstName = newPerson.FirstName
+					people[i].LastName = newPerson.LastName
+					return
+				}
+			}
 		}
 	})
 }
