@@ -48,6 +48,16 @@ func main() {
 				}
 			}
 			rw.WriteHeader(http.StatusNotFound)
+		case http.MethodDelete:
+
+			requestBodyBytes, _ := ioutil.ReadAll(r.Body)
+			var newPerson Person
+			json.Unmarshal(requestBodyBytes, &newPerson)
+
+			for i := range people {
+				copy(people[i:], people[i+1:])
+
+			}
 		}
 	})
 }
