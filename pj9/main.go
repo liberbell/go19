@@ -62,6 +62,9 @@ func main() {
 				}
 			}
 			rw.WriteHeader(http.StatusNotFound)
+
+		default:
+			rw.WriteHeader(http.StatusMethodNotAllowed)
 		}
 
 	})
