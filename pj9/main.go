@@ -2,6 +2,8 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
+	"io/ioutil"
 	"net/http"
 )
 
@@ -18,6 +20,11 @@ func main() {
 		switch r.Method {
 		case http.MethodGet:
 			jsonRequest, _ := json.MarshalIndent(&People, " ", "   ")
+			fmt.Fprint(rw, string(jsonRequest))
+
+		case http.MethodPost:
+			requestBodyBytes, _ := ioutil.ReadAll(r.Body)
+			var newPerson Person
 		}
 	})
 }
