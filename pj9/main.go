@@ -37,6 +37,8 @@ func main() {
 
 		case http.MethodPut:
 			requestBodyBytes, _ := ioutil.ReadAll(r.Body)
+			var newPerson Person
+			json.Unmarshal(requestBodyBytes, &newPerson)
 		}
 	})
 }
