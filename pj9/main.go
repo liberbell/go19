@@ -65,6 +65,7 @@ func main() {
 
 		default:
 			rw.WriteHeader(http.StatusMethodNotAllowed)
+			return
 		}
 
 	})
